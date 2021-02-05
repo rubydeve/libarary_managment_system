@@ -1,0 +1,2 @@
+module BokksHelper
+end

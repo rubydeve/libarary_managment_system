@@ -1,0 +1,13 @@
+<h1>Edit Book Detail</h1>
+
+<%= form_for @book do |f| %>
+
+<p>Book Name: <%= f.text_field 'book_name' %></p>
+<p>Author: <%= f.text_field  'author' %></p>
+<p>Publisher: <%= f.text_field  'publisher' %></p>
+<p>Bill number: <%= f.text_field  'bill_number' %></p>
+<p>date of publishing: <%= f.text_field  'date_of_publishing' %></p>
+<p>Edition: <%= f.text_field 'edition' %></p>
+<p>Price: <%= f.text_field 'price' %></p>
+<%= f.submit "Save changes" %>
+<% end %>

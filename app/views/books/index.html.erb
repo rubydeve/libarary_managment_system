@@ -1,0 +1,19 @@
+<h1>Lists of books by type</h1>
+<%= form_tag(books_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search books" %>
+<%= submit_tag "Search" %>
+<% if @books.present? %>
+<% else %>
+  <p>There are no books containing the term(s) </p>
+<% end %>
+<% end %>
+<ul id = "books">
+   <% @books.each do |c| %>
+      <%= link_to c.book_name, {:action => 'show', :id => c.id} %>
+      
+      	<%= link_to "Edit", edit_book_url(c)%>
+      	<%= link_to "Delete", book_url(c), method: :delete%>   
+</ul>
+
+<% end %>
+<p><%= link_to "Add new Book", {:action => 'new' }%></p>
